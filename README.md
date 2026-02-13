@@ -2,6 +2,8 @@
 
 A modular physics suite that discretizes Euclidean path integrals for quantum systems and scalar field theories, solves them with optimized Markov chain Monte Carlo kernels, and packages the diagnostics as reproducible plots in assets/.
 
+Read the full porject report [here](https://drive.google.com/drive/folders/1sxZ6mpGKm9Dwxbkt_YwUhrzXC3EmhE3V?usp=sharing).
+
 ## Overview
 
 We simulate three archetypal non-perturbative systems—Quantum Harmonic Oscillator (QHO), Phi-4 field theory, and a double-well potential—by sampling the Euclidean path integral in one or two dimensions. The toolkit blends local Metropolis updates and cluster Wolff flips with a compact analysis module so you can study spontaneous symmetry breaking, critical slowing down, and quantum tunneling without leaving Python.
