@@ -19,7 +19,7 @@ def local_update(path, a, m, thermal_step_size, pot_type=0, lambd=0.0, V0=1.0, a
         old_x = path[i]
         new_x = old_x + np.random.uniform(-thermal_step_size, thermal_step_size)
         
-        # Kinetic Term (Universal)
+        # Kinetic Term
         diff_old = (path[next_i] - old_x)**2 + (old_x - path[prev_i])**2
         diff_new = (path[next_i] - new_x)**2 + (new_x - path[prev_i])**2
         dS_kinetic = (m / (2 * a)) * (diff_new - diff_old)

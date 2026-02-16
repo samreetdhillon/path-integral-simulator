@@ -8,7 +8,6 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import numpy as np
 import matplotlib.pyplot as plt
 from core.samplers.metropolis import local_update 
-# Note: Ensure metropolis.py is calling double_well_potential!
 from tqdm import tqdm
 
 # Parameters for Double Well
@@ -23,7 +22,7 @@ print("Simulating Quantum Tunneling in a Double Well...")
 
 # --- The Monte Carlo Loop ---
 for s in tqdm(range(n_sweeps)):
-    # Updated signature: local_update(path, a, m, thermal_step_size, pot_type, lambd, V0, a_dw)
+    # local_update(path, a, m, thermal_step_size, pot_type, lambd, V0, a_dw)
     # pot_type=1 triggers the double_well_potential logic
     acc_rate = local_update(path, a, m, 1.5, 1, 0.0, V0, a_param)
     

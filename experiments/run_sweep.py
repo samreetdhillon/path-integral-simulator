@@ -35,10 +35,10 @@ for m_sq in m_sq_range:
     m_values = []
     
     for s in tqdm(range(n_sweeps), desc=f"m^2={m_sq:.2f}", leave=False):
-        # Signature: field, m_sq, lambd, step_size, pot_type
+        # Signature: field_local_update(field, m_sq, lambd, step_size, pot_type)
         field_local_update(field, m_sq, lambd, 0.6, 0) # 0 for phi^4
         
-        if s > n_thermal and s % 5 == 0: # Adding a small 'thinning' to reduce noise
+        if s > n_thermal and s % 5 == 0: # Adding a small thinning to reduce noise
             m_values.append(np.abs(np.mean(field)))
         
     # Calculate Observables

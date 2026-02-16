@@ -27,12 +27,12 @@ print(f"Starting PIMC for QHO (N={N}, a={a})")
 
 # --- 3. The Monte Carlo Loop ---
 for sweep in tqdm(range(n_sweeps)):
-    # Updated signature: local_update(path, a, m, thermal_step_size, pot_type, lambd)
+    # local_update(path, a, m, thermal_step_size, pot_type, lambd)
     acc_rate = local_update(path, a, m, step_size, 0, lambda_poly)
     
     # Only collect data after thermalization
     if sweep > n_thermal and sweep % 10 == 0:
-        # We store all points in the path as samples of the wavefunction
+        # store all points in the path as samples of the wavefunction
         data.extend(path.copy())
 
 # --- 4. Visualization & Validation ---

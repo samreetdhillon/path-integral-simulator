@@ -4,7 +4,6 @@ import os
 # Adds the project root to the python path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-# Main script for Phi^4 theory
 import numpy as np
 import matplotlib.pyplot as plt
 from core.samplers.field_metropolis import field_local_update
@@ -13,7 +12,7 @@ from tqdm import tqdm
 # Parameters
 L = 32           # Lattice size (LxL)
 lambd = 1.0      # Coupling
-m_sq = -2.0      # Negative mass squared triggers symmetry breaking!
+m_sq = -2.0      # Negative mass squared triggers symmetry breaking
 step_size = 0.5
 n_sweeps = 10000
 
@@ -25,7 +24,7 @@ print(f"Simulating Phi^4 Theory on {L}x{L} lattice...")
 # --- The Monte Carlo Loop ---
 for s in tqdm(range(n_sweeps)):
     # Match the new signature: field_local_update(field, m_sq, lambd, step_size, pot_type)
-    # We use pot_type=0 for the Phi^4 potential
+    # use pot_type=0 for the Phi^4 potential
     field_local_update(field, m_sq, lambd, step_size, 0)
     
     if s > 1000: # Post-thermalization
